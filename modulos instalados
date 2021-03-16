@@ -1,0 +1,7 @@
+//npm i express 
+para lanzar nuestro servidor
+
+//npm i express-handlebars
+nos sirve para poder crear poder conectar lo que es nuestro html y poder hacer bucless y demas 
+ya que con html normal no podriamos hacer nada de esto , para que todo esto funcione necesitamos otras
+dependencias como son las de handlabars ESTO ES UN MOTOR DE PLANTILLAS
