@@ -5,3 +5,85 @@ para lanzar nuestro servidor
 nos sirve para poder crear poder conectar lo que es nuestro html y poder hacer bucless y demas 
 ya que con html normal no podriamos hacer nada de esto , para que todo esto funcione necesitamos otras
 dependencias como son las de handlabars ESTO ES UN MOTOR DE PLANTILLAS
+
+
+//npm i  moongoose
+Es un drive de coneccion con nuestro mongodb , no es la base de datos como hemos dicho es solo un 
+drive , necesitamos tener intalado lo que es mongodb .
+
+//npm i morgan 
+Este modulo es para el servidor , nos sirve para ver que es lo que el usuario va a estar pidiendo ,
+y por donde lo pide rutas y demas .tiempo de cuanto a demorado la consulta y demas .
+
+//npm i multer 
+Nos sirve para subir imagenes desde el formulario html al servidor.
+
+//npm i fs-extra
+fs es un modulo que ya por defecto viene instalado en js , pero trabaja con lo que es calback ,
+por eso vamos a isntalar el modulo fs-extra que nos sirve para poder usar asyn y await , aunque como hemos
+visto en el curso de fernado herrera tambien podemos usar lo que son asyn y await con este modulo que viene por defecto en js.
+
+
+//npm i errorhandler 
+cuando el usuario visite una ruta que no existe el servidor le va a pintar un error por pantalla.
+
+//npm i md5
+Es una forma de cifrado que utiliza gravatar para cifrar informacion sensible.
+
+
+
+
+
+
+
+
+
+
+//---------------------------------------------otras cosas----------------------
+
+//es.gravatar.como
+nos sirve para asociar una imagen a nuestro correo electronico por si alguna vez lo que hacemos es comentar
+en alguna red social que no tengamos foto ni nada ya coge nuestra foto que tengamos en gravatar.
+para eso el otro servicio tambien tiene que estar usando gravatar.
+
+
+
+//-----------------------------------------------carpetas---------------------------
+
+//src
+aqui se encuentra todo el codigo de nuesto proyecto ,  todas los ficheros y directorios que vamos
+a necesitar para orgnizar nuestro codigo de una manera mas eficiente.
+
+//src/controllers
+aqui encontraremos todos nuestro controladores el cual tendra funcionalidades diferentes segun lo que 
+haga nuestra aplicacion , un ejemplo es dar likes , subir fotos etc...
+
+//src/helpers 
+aqui estara todo nuestro codigo que podemos ir reutilizando poco a poco.
+
+//src/models
+crearemos todos los modelos que vamos a nesecitar en nuestra base de datos , ejemplo usuarios(contraseña , correo img etc)
+
+//src/public
+aqui crearemos todos los archivos que le usuario puede tener acceso desde el navegador
+imagenes , fuentes css etc...
+
+//src/routes 
+nos sirven para definir las url de  nuestro servidor 
+
+//src/server
+aqui vamos a crear toda la logica relacionada con nuestro servidor
+ya que el fichero index.js solo tinee que llamar a esa logica e inicializarlo.
+
+
+//src/view 
+aqui se van a encontrar todass las vistas que el usuario va a poder ver por pantalla.
+ejemplo vista de inicio etc.. comentario etc .. 
+
+
+
+//----------------------------instalaciones adicionales
+
+//https://www.digitalocean.com/community/tutorials/how-to-install-mongodb-on-ubuntu-20-04-es
+desde ahi instalaremos mongo en nuestro ordenador.
+
