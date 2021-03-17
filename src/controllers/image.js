@@ -2,6 +2,8 @@ const { create } = require("express-handlebars");
 const {randomNumber} = require('../helpers/libs')
 const path = require('path')
 const fs = require('fs-extra')
+const {Image} = require('../models/index')
+
 const imagenController = {
 
     getImagenById : async (req ,res) => {
@@ -17,10 +19,19 @@ const imagenController = {
         if(ext === '.png' || ext === '.jpg' || ext === '.jpeg' || ext === '.gif'){
             //esto mueve un archivo de un directorio a otro
            await fs.rename(imageTempPath , targetPath);
-        res.send('copiado correctamente');
+
+        const newImg = new Image({
+            title : req.body.title,
+            filename : imgUrl + ext,
+            description : req.body.description,
+
+        })
+
+        console.log(newImg)
+        res.send('enviado correctamente');
 
         }
-        res.send('fallo al envio de la peticion');
+        //res.send('fallo al envio de la peticion');
 
 
 
