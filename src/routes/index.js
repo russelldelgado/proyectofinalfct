@@ -4,12 +4,18 @@ const router = express.Router();
 const  homeControllers  = require( '../controllers/home' )
 const imagenRouter = require('./imagesRoutes')
 
+
+
 const routes = (app) =>{
 
     router.get('/' , homeControllers.index );
-    router.use('image' , imagenRouter)
+    router.use('/image' , imagenRouter)
+
+
     app.use(router)
 }
+
+
 
 
 module.exports = {

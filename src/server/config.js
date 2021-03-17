@@ -20,7 +20,7 @@ const config = ( app ) =>{
     //como hemos cambiado la estructura de nuestro ficheros añadiendo todo dentro de la carpeta src
     //ahora tenemos que indicar donde tenemos nuestra carpeta views
     //para hacer esto requirimmos el modulo path y lo importamos
-    app.set('views' , path.join(__dirname ,'views'));
+    app.set('views' , path.join(__dirname ,'../views'));
     //una vez espress sabe donde esta mi fichero con las vistas ya puedo comenzar a configurar mi motor de plantillas
     //hay varios motores de plantillas que podriamos usar , nosotros usaremos .hbs de hundlebars
     //para esto tenemos que importar el express handlebars

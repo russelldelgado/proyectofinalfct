@@ -3,7 +3,7 @@
 const homeControllers = {
 
     index : async( req ,res) =>{
-        res.send('PAGINA DE INICIO EN CONTROLADORES')
+        res.render('index')
     }
 
 }
