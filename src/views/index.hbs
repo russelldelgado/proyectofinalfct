@@ -6,36 +6,64 @@
     </div>
 
     <div class="card-body">
-               <form action="/image/images" method="POST" enctype="multipart/form-data">
-                    <div class="form-group">
-                        <div class="input-group">
-                            <div class="custom-file">
-                                <input 
-                                type="file" 
-                                name="image" 
-                                id="inputGroup" 
-                                class="custom-file-input"
-                                aria-describedby="inputGroupFIleAddon"
-                                required
-                                />
-                                <label  class="custom-file-label" for="inputGroup"> Escoge tu archivo</label>
-                            </div>
-                        </div>
+        <form action="/image/images" method="POST" enctype="multipart/form-data">
+            <div class="form-group">
+                <div class="input-group">
+                    <div class="custom-file">
+                        <input type="file" name="image" id="inputGroup" class="custom-file-input"
+                            aria-describedby="inputGroupFIleAddon" required />
+                        <label class="custom-file-label" for="inputGroup"> Escoge tu archivo</label>
                     </div>
+                </div>
+            </div>
 
-                    <div class="form-group">
-                        <input type="text" name="title"   class="form-control"  placeholder="Titulo para la imagen" required >
-                    </div>
+            <div class="form-group">
+                <input type="text" name="title" class="form-control" placeholder="Titulo para la imagen" required>
+            </div>
 
-                    <div class="form-group">
-                        <textarea name="description"  class="form-control" rows="2" placeholder="Descripcion para la imagen " required ></textarea>
-                    </div>
-                    
-                    <div class="form-group">
-                        <button class="btn btn-success">
-                          <i class="fa fa-upload"></i>  Sube tu imagen
-                        </button>
-                    </div>
-                </form>
+            <div class="form-group">
+                <textarea name="description" class="form-control" rows="2" placeholder="Descripcion para la imagen "
+                    required></textarea>
+            </div>
+
+            <div class="form-group">
+                <button class="btn btn-success">
+                    <i class="fa fa-upload"></i> Sube tu imagen
+                </button>
+            </div>
+        </form>
     </div>
 </div>
+
+<div class="card mt-2">
+    <div class="card-header bg-dark text-white">
+        <h3> <i class="far fa-images"></i> Subidas recientes</h3>
+    </div>
+        
+<div class="card-body">
+        <div class="row">
+            {{images.titulo}}
+        {{#each images}}
+        {{titulo}} : titulos {{filename}}
+            <div class="col-md-4">
+                <a href="">
+                    <img src="src/public/upload/{{filename}}" alt="no funciona">
+                </a>
+            </div>
+        {{/each}}
+        </div>
+    </div>
+</div>
+<!--      
+<div class="card-body">
+        <div class="row">
+        {{#each images}}
+            <div class="col-md-4">
+                <a href="">
+                    {{images}}
+                    <img src="/public/upload/{{filename}}" alt="">
+                </a>
+            </div>
+        {{/each}}
+        </div>
+        -->

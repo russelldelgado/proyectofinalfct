@@ -6,6 +6,8 @@ const multer = require('multer'); //guardar imagenes
 const express = require('express'); //lo usamos para configurar json y urlencoder para poder subir imagenes de un formulario
 const { routes } = require('../routes/index');
 const errorHandler = require('errorhandler');
+const bodyParser = require('body-parser');
+
 
 
 const config = ( app ) =>{
@@ -48,7 +50,8 @@ const config = ( app ) =>{
     app.use(express.urlencoded({extended:false}))
     //para las peticiones ayax y que no haya que estar recargando el navegador cada dos por tres lo que hacemos es 
     //utilizar objetos en json ,ejemplo seria manejar los likes de mi app
-    app.use(express.json())
+    //app.use(express.json())
+    app.use(bodyParser.json())
 
     //rutas
     //indicamos las rutas en este fichero

@@ -10,28 +10,48 @@ const imagenController = {
         res.send('PUES ESTA IMAGEN POR ID');
     },
     createImagen : async (req , res)=>{
-        const imgUrl = randomNumber();
-        console.log(imgUrl)
-        const imageTempPath = req.file.path;
-        const ext = path.extname(req.file.originalname).toLowerCase(); //esto me estrae el .png o .jpg .... 
-        const targetPath = path.resolve(`src/public/upload/${imgUrl}${ext}`)
+        //aqui vamos ha ahcer una recursion
 
-        if(ext === '.png' || ext === '.jpg' || ext === '.jpeg' || ext === '.gif'){
-            //esto mueve un archivo de un directorio a otro
-           await fs.rename(imageTempPath , targetPath);
+        const saveImages = async()=>{
 
-        const newImg = new Image({
-            title : req.body.title,
-            filename : imgUrl + ext,
-            description : req.body.description,
+            const imgUrl = randomNumber();
+            const images =  await Image.find({filename : imgUrl})
+     
+            if(images.length > 0){
+                saveImages()
+            }else{
+                console.log(imgUrl)
+                const imageTempPath = req.file.path;
+                const ext = path.extname(req.file.originalname).toLowerCase(); //esto me estrae el .png o .jpg .... 
+                const targetPath = path.resolve(`src/public/upload/${imgUrl}${ext}`)
+        
+                if(ext === '.png' || ext === '.jpg' || ext === '.jpeg' || ext === '.gif'){
+                    //esto mueve un archivo de un directorio a otro
+                   await fs.rename(imageTempPath , targetPath);
+        
+                const newImg = new Image({
+                    title : req.body.title,
+                    filename : imgUrl + ext,
+                    description : req.body.description,
+        
+                })
+                  const imagenSave = await newImg.save();
+                  //console.log(newImg)
+                res.redirect('/image/images/:image_id')
+                }else{
+                    await fs.unlink(imageTempPath)
+                    res.status(500).json({error : 'solo se adime subir imagenes al servidor'})
+        
+                }
+            }
 
-        })
-
-        console.log(newImg)
-        res.send('enviado correctamente');
-
+           
         }
-        //res.send('fallo al envio de la peticion');
+
+        saveImages();
+
+       
+
 
 
 

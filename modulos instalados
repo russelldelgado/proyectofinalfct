@@ -32,7 +32,8 @@ Es una forma de cifrado que utiliza gravatar para cifrar informacion sensible.
 
 
 
-
+//npm i moment
+Para trabajar con fechas y demas.
 
 
 
